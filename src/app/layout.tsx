@@ -1,18 +1,21 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-import NavBar from '@/components/NavBar';
-import SideBar from '@/components/SideBar';
-import { ThemeProvider } from '@/components/theme-provider';
-import ReduxProvider from '@/redux/provider';
+import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import ClientProviders from "@/components/ClientProviders";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'ToDo App',
-  description: 'Created Using Next.js 14 and Ant Design',
+  title: "ToDo App",
+  description: "Created Using Next.js 14 and Ant Design",
 };
+
+//To update for new projects
+//- Create firebase project & add google auth secret key to .env.local
+//- Add google redirect url to google cloud console. API's / Credentials / Web client
 
 export default function RootLayout({
   children,
@@ -20,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ReduxProvider>
+    <ClientProviders>
+      <html lang="en">
+        <body className={inter.className}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -31,20 +34,13 @@ export default function RootLayout({
           >
             <main>
               <div className="flex flex-col min-h-screen">
-                <NavBar />
-
-                <div className="flex-1 flex">
-                  <SideBar />
-
-                  <div className="flex-1 container pt-4 md:ml-60 ml-0 mt-[60px]">
-                    {children}
-                  </div>
-                </div>
+                <Header />
+                <div className="flex-1 container">{children}</div>
               </div>
             </main>
           </ThemeProvider>
-        </ReduxProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClientProviders>
   );
 }
