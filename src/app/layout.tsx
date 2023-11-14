@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ClientProviders from "@/components/ClientProviders";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +39,7 @@ export default function RootLayout({
                 <Header />
                 <div className="flex-1 container">{children}</div>
               </div>
+              <Footer />
             </main>
           </ThemeProvider>
         </body>

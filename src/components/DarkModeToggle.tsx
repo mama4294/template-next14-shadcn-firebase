@@ -13,7 +13,7 @@ import {
 function DarkModeToggle() {
   const { setTheme } = useTheme();
   return (
-    <div className="my-auto mx-2">
+    <div className="my-auto">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="icon">
