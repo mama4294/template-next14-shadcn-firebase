@@ -9,7 +9,7 @@ async function Header() {
   const session = await getServerSession(authOptions);
 
   return (
-    <div className="sticky top-0 flex p-3 bg-muted justify-between">
+    <div className="sticky top-0 flex p-3 bg-background justify-between">
       <Logo />
       <Nav />
       <div className="flex items-center justify-end space-x-1">
