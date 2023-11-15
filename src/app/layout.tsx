@@ -7,17 +7,20 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import ClientProviders from "@/components/ClientProviders";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import FirebaseAuthProvider from "../../FirebaseAuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ToDo App",
+  title: "Template App",
   description: "Created Using Next.js 14 and Ant Design",
 };
 
 //To update for new projects
 //- Create firebase project & add google auth secret key to .env.local
 //- Add google redirect url to google cloud console. API's / Credentials / Web client
+//- Create firebase firestore database. Under properties, add firebase to web app, copy firebase config details
+//- Create a firebase key under "service accounts" and paste into .env.local
 
 export default function RootLayout({
   children,
@@ -28,20 +31,22 @@ export default function RootLayout({
     <ClientProviders>
       <html lang="en">
         <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <main>
-              <div className="flex flex-col min-h-screen">
-                <Header />
-                <div className="flex-1">{children}</div>
-                <Footer />
-              </div>
-            </main>
-          </ThemeProvider>
+          <FirebaseAuthProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <main>
+                <div className="flex flex-col min-h-screen">
+                  <Header />
+                  <div className="flex-1">{children}</div>
+                  <Footer />
+                </div>
+              </main>
+            </ThemeProvider>
+          </FirebaseAuthProvider>
         </body>
       </html>
     </ClientProviders>
