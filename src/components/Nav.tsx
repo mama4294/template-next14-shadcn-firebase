@@ -87,8 +87,8 @@ const NavItems: NavItem[] = [
     subItems: components,
   },
   {
-    title: "Protected",
-    href: "/protectedroute",
+    title: "Groups",
+    href: "/group",
   },
 ];
 

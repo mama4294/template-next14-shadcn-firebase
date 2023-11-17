@@ -3,8 +3,6 @@ import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { adminAuth, adminDb } from "./firebase-admin";
 
-console.log("AdminDB", adminDb);
-
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
