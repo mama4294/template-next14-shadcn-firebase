@@ -2,7 +2,7 @@
 
 import { getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { groupMemberAdminRef } from "@/lib/GroupMembers";
+import { groupMemberAdminRef } from "@/lib/converters/GroupMembers";
 
 function useAdminId({ groupId }: { groupId: string }) {
   const [adminId, setAdminId] = useState<string>("");

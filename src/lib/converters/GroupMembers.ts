@@ -9,7 +9,7 @@ import {
   where,
   collectionGroup,
 } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 
 export interface GroupMembers {
   userId: string;

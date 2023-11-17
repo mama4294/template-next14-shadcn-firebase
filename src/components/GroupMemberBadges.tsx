@@ -1,7 +1,7 @@
 "use client";
 
 import useAdminId from "@/hooks/useAdminId";
-import { GroupMembers, groupMembersRef } from "@/lib/GroupMembers";
+import { GroupMembers, groupMembersRef } from "@/lib/converters/GroupMembers";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import LoadingSpinner from "./LoadingSpinner";
 import { Badge } from "./ui/badge";

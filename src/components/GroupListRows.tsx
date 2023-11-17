@@ -1,6 +1,9 @@
 "use client";
 
-import { GroupMembers, groupMemberCollectionRef } from "@/lib/GroupMembers";
+import {
+  GroupMembers,
+  groupMemberCollectionRef,
+} from "@/lib/converters/GroupMembers";
 import { useSession } from "next-auth/react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import CreateGroupButton from "./CreateGroupButton";

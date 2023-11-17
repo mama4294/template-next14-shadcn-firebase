@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../auth";
 import { getDocs } from "firebase/firestore";
-import { groupMemberCollectionRef } from "@/lib/GroupMembers";
+import { groupMemberCollectionRef } from "@/lib/converters/GroupMembers";
 import GroupListRows from "./GroupListRows";
 
 async function GroupList() {

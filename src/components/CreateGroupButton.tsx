@@ -7,7 +7,7 @@ import { useToast } from "./ui/use-toast";
 import { Button } from "./ui/button";
 import { v4 as uuidv4 } from "uuid";
 import { serverTimestamp, setDoc } from "firebase/firestore";
-import { addGroupRef } from "@/lib/GroupMembers";
+import { addGroupRef } from "@/lib/converters/GroupMembers";
 import LoadingSpinner from "./LoadingSpinner";
 
 function CreateGroupButton() {
