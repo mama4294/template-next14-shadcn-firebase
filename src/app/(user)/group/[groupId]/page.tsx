@@ -1,6 +1,5 @@
-import CreateGroupButton from "@/components/CreateGroupButton";
+import AdminControls from "@/components/AdminControls";
 import GroupMembersBadges from "@/components/GroupMemberBadges";
-import InviteUser from "@/components/InviteUser";
 
 type Props = {
   params: {
@@ -11,9 +10,8 @@ type Props = {
 function GroupPage({ params: { groupId } }: Props) {
   return (
     <div className="">
-      <CreateGroupButton />
       {/* Admin controls */}
-      <InviteUser groupId={groupId} />
+      <AdminControls groupId={groupId} />
       {/* Group members */}
       <GroupMembersBadges groupId={groupId} />
       {/* Recipes */}

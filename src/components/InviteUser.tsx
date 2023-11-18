@@ -18,7 +18,7 @@ import {
 } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { PlusCircleIcon } from "lucide-react";
-import { Form, FormControl, FormField, FormItem } from "./ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
 import { getDocs, serverTimestamp, setDoc } from "firebase/firestore";
 import { getUserByEmail } from "@/lib/converters/User";
@@ -103,7 +103,7 @@ function InviteUser({ groupId }: { groupId: string }) {
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button>
-              <PlusCircleIcon className="mr-1" />
+              <PlusCircleIcon className="mr-1 " />
               Add user to group
             </Button>
           </DialogTrigger>
@@ -132,6 +132,7 @@ function InviteUser({ groupId }: { groupId: string }) {
                       <FormControl>
                         <Input placeholder={"john@doe.com"} {...field} />
                       </FormControl>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
