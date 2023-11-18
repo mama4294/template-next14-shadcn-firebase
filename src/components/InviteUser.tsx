@@ -23,6 +23,7 @@ import { Input } from "./ui/input";
 import { getDocs, serverTimestamp, setDoc } from "firebase/firestore";
 import { getUserByEmail } from "@/lib/converters/User";
 import { addGroupRef } from "@/lib/converters/GroupMembers";
+import ShareLink from "./ShareLink";
 
 const formSchema = z.object({
   email: z.string().email("Plese enter a valid email address"),
@@ -45,8 +46,6 @@ function InviteUser({ groupId }: { groupId: string }) {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Submitted");
-
     if (!session?.user.id) return;
 
     toast({
@@ -143,6 +142,12 @@ function InviteUser({ groupId }: { groupId: string }) {
             </Form>
           </DialogContent>
         </Dialog>
+
+        <ShareLink
+          isOpen={openInviteLinke}
+          setIsOpen={setOpenInviteLinke}
+          groupId={groupId}
+        />
       </>
     )
   );

@@ -9,8 +9,6 @@ type Props = {
 };
 
 function GroupPage({ params: { groupId } }: Props) {
-  console.log("groupId from params ", groupId);
-
   return (
     <div className="">
       <CreateGroupButton />

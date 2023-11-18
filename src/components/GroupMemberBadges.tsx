@@ -8,8 +8,6 @@ import { Badge } from "./ui/badge";
 import UserAvatar from "./UserAvatar";
 
 function GroupMembersBadges({ groupId }: { groupId: string }) {
-  console.log("groupId", groupId);
-
   const [members, loading, error] = useCollectionData<GroupMembers>(
     groupMembersRef(groupId)
   );
